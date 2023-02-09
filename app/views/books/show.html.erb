@@ -23,6 +23,9 @@
       <div class="card-body">
         <ul>
           <% @book.book_review.each do |book_review|%>
+            <% if book_review.user.avatar.attached? %>
+              <div style="width: 60px;" ><%= image_tag book_review.user.avatar, class: "card-img-top" %></div>
+            <% end %>
           　<div class="card border-light mb-3" style="max-width: 20rem;">
               <div class="card-header"><%= book_review.user.name %></div>
               <div class="card-body">
@@ -34,6 +37,7 @@
       <%= form_with(model: @book_review, local: true) do |form| %>
         <div class= "field">
           <%= form.text_area :review, :class => "form-control" %>
+          <%= form.hidden_field :user_id, :value => current_user.id %>
           <%= form.hidden_field :book_id, :value => @book.id %>
         </div>
         <div class="actions">

@@ -1,6 +1,20 @@
 <div class="jumbotron m-5"  >
   <h1 class="display-4">Book Reviewへようこそ</h1>
   <hr class="my-4">
+  <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.name %>
+          </a>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Sign in", new_user_session_path, class: "nav-link"%>
+        </li>
+      <% end %>
+  </ul>
   <p>本についてレビューをするサイトです</p>
+  <%= button_to "Sign out" , destroy_user_session_path, method: :delete, class: "btn btn-primary btn-lg"%>
   <%= button_to "本一覧をみる", books_path, method: :get ,class: "btn btn-primary btn-lg" %>
 </div>
