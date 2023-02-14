@@ -1,10 +1,22 @@
 class OrderItemsController < ApplicationController
+    skip_before_action :verify_authenticity_token
+
+    def show
+        @order_items = current_order.order_items
+    end
 
     def create
         @order = current_order
         @order_item = @order.order_items.new(order_params)
         @order.save
         session[:order_id] = @order.id
+    end
+
+    def destroy
+        @order = current_order
+        @order_item = @order.order_items.find(params[:id])
+        @order_item.destroy
+        @order_item = current_order.order_items
     end
 
     private

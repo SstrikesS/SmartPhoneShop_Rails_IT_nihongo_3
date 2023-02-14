@@ -1,10 +1,25 @@
-<h1>Cards#show</h1>
-<p>Find me in app/views/cards/show.html.erb</p>
-    <% @order_items.each do |item| %>
-        <h3><%= item.book.title %></h3>
-        <h3><%= item.book.number_of_pages %></h3>
-        <h3><%= item.quantity.to_i %></h3>
-
-        <h2>Subtotal: <%= item.total %></h2>
-    <% end %>
+<h1 class ="card_title" >Cards</h1>
+    <table class="card_table">
+        <thead>
+            <tr>
+                <td>Product</td>
+                <td>Product price</td>
+                <td>Amout</td>
+                <td>Subtotal</td>
+            </tr>
+        <% @order_items.each do |item| %>
+            <tr>
+                <td><%= item.book.title %></td>
+                <td><%= item.book.number_of_pages %>¥</td>
+                <td><%= item.quantity.to_i %></td>
+                <%= form_for item do |f| %>
+                    <%= f.hidden_field :product_id, :value=> item.book.id %>    
+                    <!-- <%= link_to "Remove Items", order_item_path(item), method: :delete %> -->
+                    <% end %>
+                <td><%= item.total %></td>
+            </tr>
+        <% end %>
+        </thead>
+    </table>
+    <br>
     <h1>Total: <%= current_order.subtotal %> </h1>
