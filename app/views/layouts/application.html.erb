@@ -6,17 +6,15 @@
     <%= csp_meta_tag %>
     
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
   <body>
+    <div class="taskbar">
+      <%= link_to "Shopping Cart", root_path, class: "task_bar_title" %>
+    </div>
     <nav class="navbar navbar-toggler navbar-dark bg-primary">
-      <%= link_to "Book Review", root_path, class: "nav-link navbar-brand" %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
