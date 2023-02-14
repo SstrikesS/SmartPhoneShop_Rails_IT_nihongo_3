@@ -3,6 +3,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class =  "pro_title">スマートフォン</h1>
+<%= link_to "#{current_order.order_items.size} items with a value of #{current_order.subtotal}$", cards_show_path %>
 <div class="row">
 　<% @books.each do |book| %>
 　　<div class="col-md-3">
@@ -16,6 +17,13 @@
         </div>
         <div class="card-body">
           <%= button_to "詳細を見る", book, method: :get, class: "btn btn-outline-secondary btn-sm" =%>
+        </div>
+        <div>
+          <%= form_for @order_item do |f| %>
+          <%= f.hidden_field :book_id, :value => book.id %>
+          <%= f.number_field :quantity, :value => 1, :min => 1 %>
+          <%= f.submit "Add to Cart" %>
+          <% end %>
         </div>
       </div>
     </div>

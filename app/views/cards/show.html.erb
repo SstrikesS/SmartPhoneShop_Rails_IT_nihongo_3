@@ -1,0 +1,10 @@
+<h1>Cards#show</h1>
+<p>Find me in app/views/cards/show.html.erb</p>
+    <% @order_items.each do |item| %>
+        <h3><%= item.book.title %></h3>
+        <h3><%= item.book.number_of_pages %></h3>
+        <h3><%= item.quantity.to_i %></h3>
+
+        <h2>Subtotal: <%= item.total %></h2>
+    <% end %>
+    <h1>Total: <%= current_order.subtotal %> </h1>
