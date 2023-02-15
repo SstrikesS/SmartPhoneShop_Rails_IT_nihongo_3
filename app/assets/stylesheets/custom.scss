@@ -6,12 +6,24 @@
  html {
    position: relative;
    min-height: 100%;
+   background-image: url('bg.jpg') !important;
+   background-size: cover !important;
+ }
+ .fa-solid{
+  float: right;
+  padding-top: 10px;
+  font-size: 30px;
+  padding-right: 20px;
  }
  body {
    /* Margin bottom by footer height */
    margin-bottom: 60px;
+   border-radius: 10px;
+   border-style: hidden;
+   height: 660px;
+   background-color: initial !important;
  }
- .footer {
+ imimportantportant.footer {
    position: absolute;
    bottom: 0;
    width: 100%;
@@ -25,6 +37,8 @@
   border-style: hidden !important;
 }
 .pro_title{
+  color: aliceblue;
+  
   font-family: Arial, Helvetica, sans-serif !important;
 }
 .card-title{
@@ -36,6 +50,15 @@
 }
 .card-link{
   float: right;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 15px;
+  height: 50px;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: aliceblue ;
+  color: cornflowerblue;
 }
 .pro_title{
   float: left;
@@ -49,5 +72,64 @@
   border-radius: 10px !important;
 }
 #order_item_quantity{
+  text-align: center;
+  width: 20%;
+  margin-left: 65px;
   border-radius: 1px  !important;
+  border-radius: 10px !important; 
+  border-style: hidden;
+}
+.prod_content{
+  width: 100%;
+  height: 600px;
+}
+.prod_box{
+  border-radius: 10px;
+  border-style: none;
+  width: 20%;
+  height: 410px;
+  margin-left: 6%;
+  display: block;
+  float: left;
+  margin-right: 6%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: cornflowerblue;
+}
+.prod_img{
+  background-size: cover;
+  width: 100%;
+}
+.show_button{
+  margin-left: 65px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  border-style: hidden;
+  background-color: coral;
+  color: aliceblue;
+}
+.show_button:hover, .add_button:hover{
+  background-color: aliceblue;
+  color: coral;
+}
+.prod_title, .prod_price{
+  color:white;
+  font-size: 20px;
+  padding: 0%;
+  margin: 0%;
+  margin-top: 10px;
+  padding-left: 5%;
+  width: 90%;
+}
+.prod_title{
+  text-align: center;
+}
+.add_button{
+  border-radius: 10px;
+  border-style: hidden;
+  background-color: coral;
+  color: aliceblue;
 }

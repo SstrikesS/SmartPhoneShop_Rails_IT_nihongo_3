@@ -2,10 +2,32 @@
 
 <p id="notice"><%= notice %></p>
 <div class="header_pro_title">
-<h1 class =  "pro_title">スマートフォン</h1>
-<%= link_to "#{current_order.order_items.size} items with a value of #{current_order.subtotal}$", cards_show_path, class: "card-link" %>
+<h1 class =  "pro_title">スマートフォン </h1>
+<%= link_to "#{current_order.order_items.size} items in your cart", cards_show_path, class: "card-link" %>
 </div>
-<div class="row">
+<div class ="prod_content">
+  <% @books.each do |book| %>
+  <div class="prod_box">
+    <div class="prod_img">
+      <% if book.image.attached? %>
+          <%= image_tag book.image, class: "card-img" %>
+        <% end %>
+    </div>
+    <p class="prod_title"><%= book.title %></p>
+    <p class="prod_price">値段：<%= book.number_of_pages %>¥</p>
+    <%= button_to "詳細を見る", book, method: :get, class: "show_button" =%>
+    <div>
+      <%= form_for @order_item, remote: true do |f| %>
+      <%= f.hidden_field :book_id, :value => book.id %>
+      <%= f.number_field :quantity, :value => 1, :min => 1 %>
+      <%= f.submit "Add to Cart", :class => "add_button" %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<!-- <div class="row">
 　<% @books.each do |book| %>
 　　<div class="col-md-3">
       <div class="card">
@@ -29,7 +51,7 @@
       </div>
     </div>
   <% end %>
-</div>
+</div> -->
 
 </br>
 <!-- <%= button_to "本を追加する", new_book_path, method: :get ,class: "btn btn-primary btn-sm" %>  -->

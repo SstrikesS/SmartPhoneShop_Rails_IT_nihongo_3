@@ -1,13 +1,14 @@
-
+<script src="https://kit.fontawesome.com/777a90157d.js" crossorigin="anonymous"></script>
 <div class="jumbotron m-5"  >
   <div class="container_bg">
     <div class="container_body">
       <p style="text-align:center">Shopping-Cartへようこそ</p>
+      
       <br>
       <br>
       <hr width="95%" style="padding-bottom: 30px">
       <div class="user_info">
-        <p style="text-align:center; padding-bottom: 10px">本についてレビューをするサイトです</p>
+        <p style="text-align:center; padding-bottom: 10px">Welcome to smartphone shop! Let's view our products!!!</p>
         <ul class="navbar-nav mr-auto">
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
@@ -23,27 +24,9 @@
         </ul>
         
         <%= button_to "Sign out" , destroy_user_session_path, method: :delete, class: "button_css"%>
-        <%= button_to "本一覧をみる", books_path, method: :get ,class: "button_css" %>
+        <%= button_to "View Product", books_path, method: :get ,class: "button_css" %>
       </div>
     </div>
   </div>
 </div>
-  <!-- <h1 class="display-4">Shopping-Cartへようこそ</h1>
-  <hr class="my-4">
-  <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= current_user.name %>
-          </a>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Sign in", new_user_session_path, class: "nav-link"%>
-        </li>
-      <% end %>
-  </ul>
-  <p>本についてレビューをするサイトです</p>
-  <%= button_to "Sign out" , destroy_user_session_path, method: :delete, class: "btn btn-primary btn-lg"%>
-  <%= button_to "本一覧をみる", books_path, method: :get ,class: "btn btn-primary btn-lg" %> -->
 
