@@ -2,10 +2,10 @@
     <table class="card_table">
         <thead>
             <tr>
-                <td>Product</td>
-                <td>Product price</td>
-                <td>Amout</td>
-                <td>Subtotal</td>
+                <td>製品</td>
+                <td>値段</td>
+                <td>アマウント</td>
+                <td>小計</td>
             </tr>
         <% @order_items.each do |item| %>
             <tr>
@@ -22,4 +22,4 @@
         </thead>
     </table>
     <br>
-    <h1 style="color: white">Total: <%= current_order.subtotal %> </h1>
+    <h1 style="color: white; font-family:Arial, Helvetica, sans-serif !important ">合計: <%= current_order.subtotal%>￥ </h1>

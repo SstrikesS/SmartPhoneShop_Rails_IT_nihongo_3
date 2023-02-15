@@ -3,7 +3,7 @@
 <p id="notice"><%= notice %></p>
 <div class="header_pro_title">
 <h1 class =  "pro_title">スマートフォン </h1>
-<%= link_to "#{current_order.order_items.size} items in your cart", cards_show_path, class: "card-link" %>
+<%= link_to "カートで#{current_order.order_items.size}製品がある", cards_show_path, class: "card-link" %>
 </div>
 <div class ="prod_content">
   <% @books.each do |book| %>
@@ -20,7 +20,7 @@
       <%= form_for @order_item, remote: true do |f| %>
       <%= f.hidden_field :book_id, :value => book.id %>
       <%= f.number_field :quantity, :value => 1, :min => 1 %>
-      <%= f.submit "Add to Cart", :class => "add_button" %>
+      <%= f.submit "追加", :class => "add_button" %>
       <% end %>
     </div>
   </div>
@@ -54,4 +54,4 @@
 </div> -->
 
 </br>
-<!-- <%= button_to "本を追加する", new_book_path, method: :get ,class: "btn btn-primary btn-sm" %>  -->
+<%= button_to "製品を追加する", new_book_path, method: :get ,class: "btn btn-primary btn-sm" %> 
